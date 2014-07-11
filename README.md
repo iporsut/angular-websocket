@@ -2,7 +2,7 @@
 
 ##Example
 
-```javascripts
+```javascript
 App = angular.module("App", ["angular-websocket"]);
 
 App.controller("Chat", ["$websocket", "$log", function($websocket, $log) {
@@ -40,7 +40,7 @@ App.controller("Chat", ["$websocket", "$log", function($websocket, $log) {
 <body>
 
 <div ng-controller="Chat">
-    <p>{{ $scope.receivemessage }}</p>
+    <p>{{ receivemessage }}</p>
 
     Msg : <input type="text" ng-model="message"/>
     <button ng-click="sendMessage()">Send</button>
