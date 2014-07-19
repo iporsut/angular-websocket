@@ -42,16 +42,11 @@ describe("angular-websocket module", function() {
     }));
 
     it("should call onopen when connected", function() {
-        var msg;
-
-        websocketTest.onopen(function() {
-            msg = "Hello";
-        });
-
+        var onopen = jasmine.createSpy("onopen");
+        websocketTest.onopen(onopen);
         websocketTest.open("ws://localhost/websocket");
         MockOnOpen();
-
-        expect(msg).toEqual("Hello");
+        expect(onopen).toHaveBeenCalled();
     });
 
     it("should call onmessage when receive message", function() {
